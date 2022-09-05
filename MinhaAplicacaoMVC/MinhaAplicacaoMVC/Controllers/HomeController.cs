@@ -6,11 +6,11 @@ namespace MinhaAplicacaoMVC.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string categoria, string id)
         {
             return View();
         }
-
+         
         public IActionResult Privacy()
         {
             ContatoModel contato = new();
