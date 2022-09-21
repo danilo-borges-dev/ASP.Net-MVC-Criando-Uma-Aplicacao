@@ -12,18 +12,26 @@ namespace MinhaAplicacaoMVC_3.Controllers
         [Route("pagina-inicial/{id:int}/{categoria?}")]
         public IActionResult Index(string id, Guid categoria)
         {
+            var filme = new Filme()
+            {
+                Titulo = "Oi",
+                DataDeLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000,
+            };
+
             return View();
         }
 
         [Route("privacidade")]
         [Route("policita-de-privacidade")]
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
-            // return Json("{'nome':'Danilo'}");
-            // var fileBytes = System.IO.File.ReadAllBytes(@"c:\arquivo.txt");
-            // var fileName = "novo_arquivo.txt";
-            // return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
-            // return Content("Realizando um teste de comentário.");
+            if (ModelState.IsValid)
+            {
+
+            }
             return View();
         }
 

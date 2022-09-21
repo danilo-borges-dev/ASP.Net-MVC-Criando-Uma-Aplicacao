@@ -18,7 +18,7 @@ namespace MinhaAplicacaoMVC_3.Models
         public DateTime DataDeLancamento { get; set; }
 
         [RegularExpression(@"[A-Z]+[a-zA-Z\u00C0-\u00FF""'\w-]*$", ErrorMessage = "Gênero em formato inválido")]
-        [StringLength(30, ErrorMessage = "Máximo de 30 caracteres")]
+        [StringLength(30, ErrorMessage = "Máximo de 30 caracteres"), Required(ErrorMessage = "O campo gênero é requirido")]
         public string Genero { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "O valor não pode ser menor ou igual a zero")]
